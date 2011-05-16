@@ -1,0 +1,10 @@
+zipping made easy
+
+Cranial Load == CRANIAL_LOAD_MINIMUM  => true
+
+require 'gzip'
+ a = "hello".gzip # => "\x1F\x8B\b\x00\xA4w\xD1M\x00\x03\xCBH\xCD\xC9\xC9\a\x00\x86\xA6\x106\x05\x00\x00\x00"
+b = a.gunzip
+b == "hello" # => true  
+#useful for bigger strings, "hello" does not compress well
+a = ("a" * 100).gzip # => "\x1F\x8B\b\x00\xD9w\xD1M\x00\x03KL\xA4=\x00\x00dzp\xAFd\x00\x00\x00"
